@@ -1,10 +1,10 @@
-The aim of this script is to copy image files from a motioneyes machine and delete them to ensure space remains for continnued operation.
+The aim of this script is to copy image files from a motioneyeOS machine and delete them to ensure space remains for continued operation.
 
 It is intended that the script can be entered into crontab and run periodically to suit the space available and the data consumption rate.
 
 The script is minimal and uses 'find' and 'rsync' in a straightforward way.  Particularly any user should consider whether the 'find' command is suitable and there is very little safeguard to prevent it deleting important data if set up is not correct.
 
-Open a console on the motioneyesos machine then:
+Open a console on the motioneyeos machine then:
 
     mkdir /data/bin
     mkdir -p /data/conf/keys
