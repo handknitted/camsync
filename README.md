@@ -15,7 +15,3 @@ Open a console on the motioneyesos machine then:
     # file on the target user's account on the target machine
     
 Copy the `bin/sync.sh` script to the motioneyeos machine at `/data/bin`, the `conf/env.sh` (completed with the appropriate values for your set up) to `/data/conf/.`.
-
-
-
-HANDLING 'known_hosts'
