@@ -15,3 +15,15 @@ Open a console on the motioneyesos machine then:
     # file on the target user's account on the target machine
     
 Copy the `bin/sync.sh` script to the motioneyeos machine at `/data/bin`, the `conf/env.sh` (completed with the appropriate values for your set up) to `/data/conf/.`.
+
+How to add to cron
+
+On the motioneyeos machine, as root (this might be revised as it's not a good practice to have root running things in cronif somebody else could)
+
+    EDITOR="vi" crontab -e
+    
+and add a line
+
+    5 02 * * * . /data/conf/env.sh && /data/bin/sync.sh 
+    
+or something like.  This line sets the script to run once a day at five minutes past two a.m. I think.
