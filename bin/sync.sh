@@ -16,9 +16,12 @@ echo TARGET_HOST ${TARGET_HOST}
 TARGET_USER=${TARGET_USER:?}
 echo TARGET_USER ${TARGET_USER}
 
+KNOWN_HOSTS_PATH=${KNOWN_HOSTS_PATH:?}
+echo KNOWN_HOSTS_PATH ${KNOWN_HOSTS_PATH}
+
 DATA_PATH=${DATA_PATH:-/data/output/Camera1}
 
-rsync -avc -e "ssh -i ${KEY_PATH}" ${DATA_PATH}/ ${TARGET_USER}@${TARGET_HOST}:${TARGET_PATH}/
+rsync -avc -e "ssh -i ${KEY_PATH} -o UserKnownHostsFile=${KNOWN_HOSTS_PATH}" ${DATA_PATH}/ ${TARGET_USER}@${TARGET_HOST}:${TARGET_PATH}/
 
 
 # don't remove folders more recent than seven days ago
